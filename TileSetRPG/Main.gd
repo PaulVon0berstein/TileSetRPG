@@ -18,7 +18,12 @@ func _ready():
 
 func _on_Area2D_body_shape_entered(body_id, body, body_shape, area_shape):
 	print("uwu")
+	$Area2D/Label.visible = true
+	$Area2D/Label/LabelTimer.start()
 
 
-func _on_TEstHit_area_entered(area):
-	print("hit")
+
+
+
+func _on_LabelTimer_timeout():
+	$Area2D/Label.visible = false

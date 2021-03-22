@@ -4,9 +4,10 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://TileSet2.png" type="Texture" id=3]
 [ext_resource path="res://Tileset1.png" type="Texture" id=4]
-[ext_resource path="res://TEstHit.gd" type="Script" id=5]
+[ext_resource path="res://alia.png" type="Texture" id=5]
+[ext_resource path="res://Main.tres" type="Theme" id=6]
 
-[sub_resource type="TileSet" id=6]
+[sub_resource type="TileSet" id=1]
 0/name = "Tileset1.png 0"
 0/texture = ExtResource( 4 )
 0/tex_offset = Vector2( 0, 0 )
@@ -31,18 +32,18 @@
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=2]
 
-[sub_resource type="ConvexPolygonShape2D" id=8]
+[sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 32, 48, 0, 48, 16, 16, 16, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=9]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=10]
+[sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
-[sub_resource type="TileSet" id=4]
+[sub_resource type="TileSet" id=6]
 0/name = "TileSet2.png 0"
 0/texture = ExtResource( 3 )
 0/tex_offset = Vector2( 0, 0 )
@@ -53,14 +54,14 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 8 )
+0/shape = SubResource( 3 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 8 ),
+"shape": SubResource( 3 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -74,14 +75,14 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 9 )
+1/shape = SubResource( 4 )
 1/shape_one_way = false
 1/shape_one_way_margin = 1.0
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 9 ),
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
@@ -95,25 +96,23 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 10 )
+2/shape = SubResource( 5 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 10 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
-
-[sub_resource type="CircleShape2D" id=11]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 6 )
+tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 cell_tile_origin = 1
@@ -126,12 +125,28 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 194.454, 54.4472 )
-shape = SubResource( 5 )
+position = Vector2( 196.699, 51.641 )
+shape = SubResource( 2 )
+
+[node name="Label" type="Label" parent="Area2D"]
+visible = false
+margin_left = 154.091
+margin_top = 7.17298
+margin_right = 215.091
+margin_bottom = 47.173
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 6 )
+text = "Come here my dear child."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTimer" type="Timer" parent="Area2D/Label"]
+one_shot = true
 
 [node name="TileMap2" type="TileMap" parent="."]
 z_index = 5
-tile_set = SubResource( 4 )
+tile_set = SubResource( 6 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 cell_tile_origin = 1
@@ -147,15 +162,8 @@ z_index = 3
 collision_layer = 3
 collision_mask = 3
 
-[node name="TEstHit" type="Area2D" parent="." groups=[
-"Angriffe",
-]]
-collision_layer = 8
-collision_mask = 8
-script = ExtResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TEstHit"]
-position = Vector2( 73.4243, 41.6105 )
-shape = SubResource( 11 )
+[node name="alia" type="Sprite" parent="."]
+position = Vector2( 141.956, 35.1628 )
+texture = ExtResource( 5 )
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_Area2D_body_shape_entered"]
-[connection signal="area_entered" from="TEstHit" to="." method="_on_TEstHit_area_entered"]
+[connection signal="timeout" from="Area2D/Label/LabelTimer" to="." method="_on_LabelTimer_timeout"]

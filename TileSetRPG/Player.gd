@@ -22,7 +22,7 @@ func get_input():
 	if Input.is_action_just_pressed("Fight"):
 		$Sprite/SchwertMove.visible = true
 		$Sprite/SchwertMove.play()
-		$Sprite/SchwertMove/SchwertHitbox.monitoring = true	
+		
 		
 		
 	# Make sure diagonal movement isn't faster
@@ -33,12 +33,11 @@ func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
 
+#end me
 
 func _on_AnimatedSprite_animation_finished():
 	$Sprite/SchwertMove.stop()
 	$Sprite/SchwertMove.visible = false
-	$Sprite/SchwertMove/SchwertHitbox.monitoring = false
+	
 
 
-func _on_SchwertHitbox_area_entered(area):
-	print("hit")
