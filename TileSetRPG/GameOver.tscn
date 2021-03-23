@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Main.tres" type="Theme" id=1]
+
+[node name="GameOver" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 380.965
+margin_top = 262.413
+margin_right = 604.965
+margin_bottom = 392.413
+rect_scale = Vector2( 2, 2 )
+theme = ExtResource( 1 )
+text = "You died."
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,9 +1,7 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,6 +18,8 @@ func _on_Area2D_body_shape_entered(body_id, body, body_shape, area_shape):
 	print("uwu")
 	$Area2D/Label.visible = true
 	$Area2D/Label/LabelTimer.start()
+	
+	
 
 
 
@@ -27,3 +27,8 @@ func _on_Area2D_body_shape_entered(body_id, body, body_shape, area_shape):
 
 func _on_LabelTimer_timeout():
 	$Area2D/Label.visible = false
+	$alia.visible = false
+	$Area2D.queue_free()
+
+
+
