@@ -67,7 +67,13 @@ func _on_AnimatedSprite_animation_finished():
 
 
 func _on_PlayerStatsUpdate_timeout():
-	$Camera2D/Label/Label.text = str(hp)
+	
+	if hp == 2:
+		$Camera2D/HP1.visible = false
+	
+	if hp == 1:
+		$Camera2D/HP3.visible = false
+	
 	
 	if hp <= 0:
 		get_tree().change_scene("res://GameOver.tscn")

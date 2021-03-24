@@ -230,7 +230,6 @@ texture = ExtResource( 5 )
 [node name="Spikes" type="AnimatedSprite" parent="."]
 position = Vector2( 176.199, -250.282 )
 frames = SubResource( 8 )
-frame = 1
 speed_scale = 0.25
 playing = true
 
@@ -243,6 +242,7 @@ shape = SubResource( 9 )
 [node name="Spikes2" type="AnimatedSprite" parent="."]
 position = Vector2( 177.615, -285.678 )
 frames = SubResource( 8 )
+frame = 1
 speed_scale = 0.25
 playing = true
 
@@ -303,7 +303,7 @@ position = Vector2( 25.6453, 16.0901 )
 scale = Vector2( 0.289207, 0.295993 )
 z_index = 8
 frames = SubResource( 11 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -320,4 +320,5 @@ texture = ExtResource( 11 )
 [connection signal="body_entered" from="Spikes2/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Spikes2/Area2D" to="Player" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="VillagerInfo/Area2D" to="VillagerInfo/Sprite" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="VillagerInfo/Area2D" to="VillagerInfo/Sprite" method="_on_Area2D_body_exited"]
 [connection signal="pressed" from="VillagerInfo/Sprite/Button" to="VillagerInfo/Sprite" method="_on_Button_pressed"]

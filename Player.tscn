@@ -12,7 +12,7 @@
 [ext_resource path="res://Samback.png" type="Texture" id=10]
 [ext_resource path="res://Samleftt.png" type="Texture" id=11]
 [ext_resource path="res://Samright.png" type="Texture" id=12]
-[ext_resource path="res://Main.tres" type="Theme" id=13]
+[ext_resource path="res://HP.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -34,30 +34,26 @@ z_as_relative = false
 current = true
 zoom = Vector2( 0.4, 0.4 )
 
-[node name="Label" type="Label" parent="Camera2D"]
-margin_left = 201.128
-margin_top = 114.583
-margin_right = 319.128
-margin_bottom = 154.583
-rect_rotation = 180.0
-rect_scale = Vector2( 0.5, 0.5 )
-theme = ExtResource( 13 )
-text = "Leben: "
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="HP1" type="Sprite" parent="Camera2D"]
+position = Vector2( 146.913, 105.919 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
 
-[node name="Label" type="Label" parent="Camera2D/Label"]
-margin_left = 100.05
-margin_top = 0.943848
-margin_right = 140.05
-margin_bottom = 40.9438
-text = "3"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="HP2" type="Sprite" parent="Camera2D"]
+position = Vector2( 191.531, 106.199 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+
+[node name="HP3" type="Sprite" parent="Camera2D"]
+position = Vector2( 169.082, 106.199 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.561218, -3.36738 )
 rotation = 3.13985
 texture = ExtResource( 1 )
 
@@ -67,7 +63,7 @@ position = Vector2( -0.132439, -9.2703 )
 frames = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.489907, -1.77534 )
+position = Vector2( -0.489907, -2.33657 )
 scale = Vector2( -1.02363, 1.30202 )
 shape = SubResource( 2 )
 
